@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --purple: #A729F5;
+    --very-dark-grayish-blue: #313E51;
+    --dark-grayish-blue: #3B4D66;
+    --grayish-blue: #626C7F;
+    --light-grayish-blue: #ABC1E1;
+    --very-light-grayish-blue: #F4F6FA;
+    --white: #FFFFFF;
+    --green: #26D782;
+    --red: #EE5454;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+}
