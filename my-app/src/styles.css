@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'normalize.css';
+
 :root {
     --purple: #A729F5;
     --very-dark-grayish-blue: #313E51;
