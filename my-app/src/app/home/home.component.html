@@ -8,11 +8,11 @@
     </div>
 
     <div class="quiz-card-container">
-        <div *ngFor="let quiz of quizzes" class="quiz-card">
+        <a [routerLink]="[quiz.title.toLowerCase(),'1']" *ngFor="let quiz of quizzes" class="quiz-card">
             <div class="icon-container" [ngStyle]="{'background-color': getIconContainerColor(quiz.title)}">
                 <img [src]="quiz.icon" [alt]="quiz.title + 'Icon Image'" />
             </div>
             <p class="text">{{quiz.title}}</p>
-        </div>
+        </a>
     </div>
 </section>
