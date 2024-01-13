@@ -1,21 +1,17 @@
 <section class="html-problems">
     <div>
-        <h1 class="problem-number">Question 6 of 10</h1>
-        <h2 class="problem-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tempore eaque ipsum
-            ut voluptatibus modi
-            voluptas culpa enim velit? Architecto possimus sed pariatur! Corrupti explicabo iusto, numquam quae quia
-            minima?
-        </h2>
+        <h1 class="problem-number">Question {{problemIndex + 1}} of 10</h1>
+        <h2 class="problem-title">{{htmlProblems[problemIndex].question}}</h2>
 
         <div class="progress-container">
             <div class="progress"></div>
         </div>
     </div>
 
-    <div class="options">
+    <div class="options" *ngFor="let option of htmlProblems[problemIndex].options; let i = index">
         <button class="option">
-            <span class="option-letter">A</span>
-            <span>4.5:1</span>
+            <span class="option-letter">{{ getOptionLetter(i)}}</span>
+            <span>{{option}}</span>
         </button>
     </div>
 
