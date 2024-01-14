@@ -19,6 +19,7 @@ export class HtmlproblemsComponent {
   htmlProblems: Question[] = []
   problemIndex: number = 0
   questions: [] = []
+  selectedOptionIndex: number = -1;
 
   constructor() {
     this.quizzes = this.quizService.getQuizzes()
@@ -32,6 +33,10 @@ export class HtmlproblemsComponent {
 
   getOptionLetter(index: number): string {
     return String.fromCharCode(65 + index);
+  }
+
+  pickOption(index: number) {
+    this.selectedOptionIndex = index
   }
 
 

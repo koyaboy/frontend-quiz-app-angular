@@ -9,7 +9,8 @@
     </div>
 
     <div class="options" *ngFor="let option of htmlProblems[problemIndex].options; let i = index">
-        <button class="option">
+        <button class="option" (click)="pickOption(i)"
+            [ngStyle]="{'border': i === selectedOptionIndex ? '3px solid var(--purple)': ''}">
             <span class="option-letter">{{ getOptionLetter(i)}}</span>
             <span>{{option}}</span>
         </button>
