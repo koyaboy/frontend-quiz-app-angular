@@ -9,13 +9,13 @@
     </div>
 
     <div class="options" *ngFor="let option of htmlProblems[problemIndex].options; let i = index">
-        <button class="option" (click)="pickOption(i)"
+        <button #optionButton class="option" (click)="pickOption(i)"
             [ngStyle]="{'border': i === selectedOptionIndex ? '3px solid var(--purple)': ''}">
             <span class="option-letter">{{ getOptionLetter(i)}}</span>
             <span>{{option}}</span>
         </button>
     </div>
 
-    <button class="submit">Submit Answer</button>
+    <button class="submit" (click)="(submitAnswer($event))">Submit Answer</button>
 
 </section>

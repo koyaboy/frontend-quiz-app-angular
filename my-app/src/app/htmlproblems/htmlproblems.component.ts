@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Quiz, Question } from '../quiz';
@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class HtmlproblemsComponent {
+  @ViewChildren('optionButton') optionButtons!: QueryList<ElementRef>;
+
   quizService: QuizService = inject(QuizService)
   route: ActivatedRoute = inject(ActivatedRoute)
   quizzes: Quiz[] = []
@@ -37,6 +39,25 @@ export class HtmlproblemsComponent {
 
   pickOption(index: number) {
     this.selectedOptionIndex = index
+  }
+
+  submitAnswer(event: MouseEvent) {
+    let options = this.htmlProblems[this.problemIndex].options
+    let answer = this.htmlProblems[this.problemIndex].answer
+    let answerIndex = -1
+
+    for (let i = 0; i < options.length; i++) {
+      if (options[i] == answer) answerIndex = i
+    }
+
+    this.optionButtons.forEach((button, index) => {
+      if (index === answerIndex) {
+        button.nativeElement.style.border = "3px solid var(--green)"
+        button.nativeElement.classList.add('selectedCorrectAnswer');
+      }
+    });
+
+
   }
 
 
