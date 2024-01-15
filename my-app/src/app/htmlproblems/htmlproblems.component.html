@@ -17,9 +17,9 @@
         </button>
     </div>
 
-    <button class="submit" (click)="(submitAnswer($event))">Submit Answer</button>
+    <button #submitButton class="submit" (click)="(submitAnswer($event))">Submit Answer</button>
 
-    <button #nextButton class="next">Next Question</button>
+    <button #nextButton class="next" (click)="moveToNextQuestion()">Next Question</button>
 
     <div #noAnswer class="no-answer-container">
         <img src="../../assets/images/icon-error.svg" alt="Icon Error">

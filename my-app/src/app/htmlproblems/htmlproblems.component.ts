@@ -1,6 +1,6 @@
 import { Component, inject, ViewChildren, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { QuizService } from '../quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Quiz, Question } from '../quiz';
 import { CommonModule } from '@angular/common';
 
@@ -15,14 +15,16 @@ import { CommonModule } from '@angular/common';
 export class HtmlproblemsComponent {
   @ViewChildren('optionButton') optionButtons!: QueryList<ElementRef>;
   @ViewChild('nextButton') nextButton!: ElementRef;
+  @ViewChild('submitButton') submitButton!: ElementRef;
   @ViewChild('noAnswer') noAnswer!: ElementRef
 
   quizService: QuizService = inject(QuizService)
   route: ActivatedRoute = inject(ActivatedRoute)
+  router: Router = inject(Router)
+
   quizzes: Quiz[] = []
   htmlProblems: Question[] = []
   problemIndex: number = 0
-  questions: [] = []
   selectedOptionIndex: number = -1;
 
   constructor() {
@@ -72,9 +74,29 @@ export class HtmlproblemsComponent {
 
         button.nativeElement.disabled = true;
       });
-    }
 
-    submitButton.style.display = "none"
-    this.nextButton.nativeElement.style.display = "block"
+      submitButton.style.display = "none"
+      this.nextButton.nativeElement.style.display = "block"
+    }
   }
+
+  moveToNextQuestion() {
+    const currentQuestionId = Number(this.route.snapshot.params['id'])
+    this.router.navigate(['html', currentQuestionId + 1])
+    this.problemIndex = this.problemIndex + 1
+
+    this.resetComponent()
+  }
+
+  resetComponent() {
+    this.selectedOptionIndex = -1
+
+    this.optionButtons.forEach((button) => {
+      button.nativeElement.style.border = "none"
+    })
+
+    this.submitButton.nativeElement.style.display = "block"
+    this.nextButton.nativeElement.style.display = "none"
+  }
+
 }
