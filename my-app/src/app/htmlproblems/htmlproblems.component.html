@@ -4,7 +4,7 @@
         <h2 class="problem-title">{{htmlProblems[problemIndex].question}}</h2>
 
         <div class="progress-container">
-            <div class="progress"></div>
+            <div class="progress" [ngStyle]="{'width': (problemIndex + 1 / 10) * 100 + '%'}"></div>
         </div>
     </div>
 
