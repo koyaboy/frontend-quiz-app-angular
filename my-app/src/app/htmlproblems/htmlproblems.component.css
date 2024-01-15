@@ -63,7 +63,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: var(--very-light-grayish-blue);
     color: var(--grayish-blue);
     width: 40px;
