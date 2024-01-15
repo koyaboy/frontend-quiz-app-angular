@@ -86,39 +86,33 @@
     background-color: var(--purple);
 }
 
-.option.selectedCorrectAnswer {
-    position: relative;
-    border: 3px solid var(--green);
-}
-
-.option.selectedCorrectAnswer::after {
-    content: "";
-    position: absolute;
-    right: 12px;
-    background-image: url("../../assets/images/icon-correct.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 32px;
-    height: 32px;
-}
-
-.option.selectedCorrectAnswer .option-letter {
-    background-color: var(--green);
-}
-
+.option.selectedCorrectAnswer,
 .option.selectedWrongAnswer {
     position: relative;
 }
 
+.option.selectedCorrectAnswer::after,
 .option.selectedWrongAnswer::after {
     content: "";
     position: absolute;
     right: 12px;
-    background-image: url("../../assets/images/icon-error.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 32px;
     height: 32px;
+}
+
+.option.selectedCorrectAnswer::after {
+    background-image: url("../../assets/images/icon-correct.svg");
+}
+
+.option.selectedWrongAnswer::after {
+    background-image: url("../../assets/images/icon-error.svg");
+}
+
+.option.selectedCorrectAnswer .option-letter {
+    background-color: var(--green);
+    color: var(--white)
 }
 
 .option.selectedWrongAnswer .option-letter {
