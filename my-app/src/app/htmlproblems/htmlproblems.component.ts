@@ -83,7 +83,13 @@ export class HtmlproblemsComponent {
   moveToNextQuestion() {
     const currentQuestionId = Number(this.route.snapshot.params['id'])
     this.router.navigate(['html', currentQuestionId + 1])
+
     this.problemIndex = this.problemIndex + 1
+
+    console.log(this.problemIndex)
+    if (this.problemIndex == 10) {
+      this.router.navigate(['html/quizcomplete'])
+    }
 
     this.resetComponent()
   }
