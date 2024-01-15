@@ -31,8 +31,6 @@ export class HtmlproblemsComponent {
     this.htmlProblems = this.quizzes.filter((quiz) => quiz.title == "HTML")[0].questions
 
     this.problemIndex = Number(this.route.snapshot.params['id']) - 1;
-
-    console.log(this.htmlProblems)
   }
 
   getOptionLetter(index: number): string {
