@@ -124,3 +124,21 @@
     background-color: var(--red);
     color: var(--white)
 }
+
+.no-answer-container {
+    display: none;
+}
+
+.no-answer-container.active {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.no-answer-container p {
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
+}

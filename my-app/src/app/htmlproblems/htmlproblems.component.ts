@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class HtmlproblemsComponent {
   @ViewChildren('optionButton') optionButtons!: QueryList<ElementRef>;
   @ViewChild('nextButton') nextButton!: ElementRef;
+  @ViewChild('noAnswer') noAnswer!: ElementRef
 
   quizService: QuizService = inject(QuizService)
   route: ActivatedRoute = inject(ActivatedRoute)
@@ -40,6 +41,7 @@ export class HtmlproblemsComponent {
 
   pickOption(index: number) {
     this.selectedOptionIndex = index
+    this.noAnswer.nativeElement.classList?.remove("active")
   }
 
   submitAnswer(event: MouseEvent) {
@@ -52,20 +54,26 @@ export class HtmlproblemsComponent {
       if (options[i] == answer) answerIndex = i
     }
 
-    this.optionButtons.forEach((button, index) => {
-      if (index === answerIndex && this.selectedOptionIndex === answerIndex) {
-        button.nativeElement.style.border = "3px solid var(--green)"
-        button.nativeElement.classList.add('selectedCorrectAnswer');
-      }
-      else if (this.selectedOptionIndex === index) {
-        button.nativeElement.style.border = "3px solid var(--red)"
-        button.nativeElement.classList.add('selectedWrongAnswer');
-      }
-      button.nativeElement.disabled = true;
-    });
+    if (this.selectedOptionIndex == -1) {
+      this.noAnswer.nativeElement.classList.add("active")
+    }
 
-    submitButton.style.display = "none"
-    this.nextButton.nativeElement.style.display = "block"
+    else {
+      this.optionButtons.forEach((button, index) => {
+        if (index === answerIndex && this.selectedOptionIndex === answerIndex) {
+          button.nativeElement.style.border = "3px solid var(--green)"
+          button.nativeElement.classList.add('selectedCorrectAnswer');
+        }
+        else if (this.selectedOptionIndex === index) {
+          button.nativeElement.style.border = "3px solid var(--red)"
+          button.nativeElement.classList.add('selectedWrongAnswer');
+        }
+        button.nativeElement.disabled = true;
+      });
+
+      submitButton.style.display = "none"
+      this.nextButton.nativeElement.style.display = "block"
+    }
   }
 
 
