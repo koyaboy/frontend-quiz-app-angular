@@ -70,7 +70,8 @@
     height: 40px;
 }
 
-.submit {
+.submit,
+.next {
     margin-top: 12px;
     width: 100%;
     display: flex;
@@ -84,6 +85,10 @@
     color: white;
     border-radius: 12px;
     background-color: var(--purple);
+}
+
+.next {
+    display: none;
 }
 
 .option.selectedCorrectAnswer,

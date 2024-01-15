@@ -1,4 +1,4 @@
-import { Component, inject, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Component, inject, ViewChildren, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Quiz, Question } from '../quiz';
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 
 export class HtmlproblemsComponent {
   @ViewChildren('optionButton') optionButtons!: QueryList<ElementRef>;
+  @ViewChild('nextButton') nextButton!: ElementRef;
 
   quizService: QuizService = inject(QuizService)
   route: ActivatedRoute = inject(ActivatedRoute)
@@ -42,6 +43,7 @@ export class HtmlproblemsComponent {
   }
 
   submitAnswer(event: MouseEvent) {
+    let submitButton = event.target as HTMLElement
     let options = this.htmlProblems[this.problemIndex].options
     let answer = this.htmlProblems[this.problemIndex].answer
     let answerIndex = -1
@@ -61,6 +63,9 @@ export class HtmlproblemsComponent {
       }
       button.nativeElement.disabled = true;
     });
+
+    submitButton.style.display = "none"
+    this.nextButton.nativeElement.style.display = "block"
   }
 
 
