@@ -86,7 +86,6 @@ export class HtmlproblemsComponent {
 
     this.problemIndex = this.problemIndex + 1
 
-    console.log(this.problemIndex)
     if (this.problemIndex == 10) {
       this.router.navigate(['html/quizcomplete'])
     }

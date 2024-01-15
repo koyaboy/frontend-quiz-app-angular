@@ -10,7 +10,7 @@ const routeConfig: Routes = [
         title: 'Home page',
     },
     {
-        path: 'html/quizcomplete',
+        path: ':title/quizcomplete',
         component: QuizcompleteComponent,
         title: 'Quiz Completed',
     },

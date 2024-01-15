@@ -9,7 +9,8 @@
 
     <div class="quiz-card-container">
         <a [routerLink]="[quiz.title.toLowerCase(),'1']" *ngFor="let quiz of quizzes" class="quiz-card">
-            <div class="icon-container" [ngStyle]="{'background-color': getIconContainerColor(quiz.title)}">
+            <div class="icon-container"
+                [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quiz.title)}">
                 <img [src]="quiz.icon" [alt]="quiz.title + 'Icon Image'" />
             </div>
             <p class="text">{{quiz.title}}</p>

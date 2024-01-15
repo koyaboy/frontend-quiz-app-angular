@@ -25,6 +25,12 @@ h1 .bold-heading {
     gap: 16px;
 }
 
+.quiz-type-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
 .user-score {
     color: var(--very-dark-grayish-blue);
     font-size: 88px;
@@ -54,4 +60,15 @@ h1 .bold-heading {
     color: white;
     border-radius: 12px;
     background-color: var(--purple);
+}
+
+.quiz-type-container {
+    margin-top: 12px;
+}
+
+.quiz-type-container .text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100%;
+    color: var(--very-dark-grayish-blue);
 }
