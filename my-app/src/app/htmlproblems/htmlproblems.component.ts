@@ -55,9 +55,8 @@ export class HtmlproblemsComponent {
         button.nativeElement.style.border = "3px solid var(--green)"
         button.nativeElement.classList.add('selectedCorrectAnswer');
       }
+      button.nativeElement.disabled = true;
     });
-
-
   }
 
 
