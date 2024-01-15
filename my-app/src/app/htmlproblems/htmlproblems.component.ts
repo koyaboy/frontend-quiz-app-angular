@@ -66,13 +66,15 @@ export class HtmlproblemsComponent {
           button.nativeElement.style.border = "3px solid var(--red)"
           button.nativeElement.classList.add('selectedWrongAnswer');
         }
+        else if (index === answerIndex) {
+          button.nativeElement.classList.add('correctAnswer')
+        }
+
         button.nativeElement.disabled = true;
       });
-
-      submitButton.style.display = "none"
-      this.nextButton.nativeElement.style.display = "block"
     }
+
+    submitButton.style.display = "none"
+    this.nextButton.nativeElement.style.display = "block"
   }
-
-
 }

@@ -45,6 +45,7 @@
 }
 
 .option {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -70,6 +71,10 @@
     height: 40px;
 }
 
+.option .text {
+    width: 199px;
+}
+
 .submit,
 .next {
     margin-top: 12px;
@@ -92,9 +97,10 @@
 }
 
 .option.selectedCorrectAnswer::after,
-.option.selectedWrongAnswer::after {
+.option.selectedWrongAnswer::after,
+.option.correctAnswer::after {
     content: "";
-    position: relative;
+    position: absolute;
     right: 12px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,7 +108,8 @@
     height: 32px;
 }
 
-.option.selectedCorrectAnswer::after {
+.option.selectedCorrectAnswer::after,
+.option.correctAnswer::after {
     background-image: url("../../assets/images/icon-correct.svg");
 }
 

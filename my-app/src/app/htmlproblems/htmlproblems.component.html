@@ -12,7 +12,7 @@
         <button #optionButton class="option" (click)="pickOption(i)"
             [ngStyle]="{'border': i === selectedOptionIndex ? '3px solid var(--purple)': ''}">
             <span class="option-letter">{{ getOptionLetter(i)}}</span>
-            <span>{{option}}</span>
+            <span class="text">{{option}}</span>
         </button>
     </div>
 
