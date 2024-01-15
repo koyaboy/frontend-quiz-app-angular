@@ -101,3 +101,7 @@
     width: 32px;
     height: 32px;
 }
+
+.option.selectedCorrectAnswer .option-letter {
+    background-color: var(--green);
+}
