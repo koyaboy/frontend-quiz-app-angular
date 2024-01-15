@@ -17,12 +17,6 @@ export class QuizcompleteComponent {
   quizService: QuizService = inject(QuizService)
 
   constructor() {
-
-    const urlSegments = this.route.snapshot.url
-    if (urlSegments.length > 0) {
-      this.quizTitle = urlSegments[0].path
-      console.log(this.quizTitle)
-    }
-
+    this.quizTitle = this.quizService.getQuizTitleFromUrl(this.route)
   }
 }

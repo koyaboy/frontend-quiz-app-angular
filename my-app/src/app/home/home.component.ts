@@ -20,27 +20,4 @@ export class HomeComponent {
   constructor() {
     this.quizzes = this.quizService.getQuizzes();
   }
-
-  // getIconContainerColor(quizTitle: string) {
-  //   switch (quizTitle) {
-  //     case 'HTML':
-  //       return '#FFF1E9'
-  //       break;
-
-  //     case 'CSS':
-  //       return '#E0FDEF'
-  //       break
-
-  //     case 'Javascript':
-  //       return '#EBF0FF'
-
-  //     case 'Accessibility':
-  //       return '#F6E7FF'
-  //       break;
-
-  //     default:
-  //       return '#F6E7FF'
-  //       break;
-  //   }
-  // }
 }

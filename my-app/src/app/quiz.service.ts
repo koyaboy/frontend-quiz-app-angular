@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from './quiz';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -460,5 +461,11 @@ export class QuizService {
         return '#F6E7FF'
         break;
     }
+  }
+
+  getQuizTitleFromUrl(route: ActivatedRoute) {
+    const urlSegments = route.snapshot.url
+    return urlSegments[0].path
+
   }
 }
