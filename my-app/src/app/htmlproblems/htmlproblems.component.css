@@ -105,3 +105,23 @@
 .option.selectedCorrectAnswer .option-letter {
     background-color: var(--green);
 }
+
+.option.selectedWrongAnswer {
+    position: relative;
+}
+
+.option.selectedWrongAnswer::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    background-image: url("../../assets/images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+}
+
+.option.selectedWrongAnswer .option-letter {
+    background-color: var(--red);
+    color: var(--white)
+}

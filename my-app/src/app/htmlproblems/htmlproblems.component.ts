@@ -55,6 +55,10 @@ export class HtmlproblemsComponent {
         button.nativeElement.style.border = "3px solid var(--green)"
         button.nativeElement.classList.add('selectedCorrectAnswer');
       }
+      else if (this.selectedOptionIndex === index) {
+        button.nativeElement.style.border = "3px solid var(--red)"
+        button.nativeElement.classList.add('selectedWrongAnswer');
+      }
       button.nativeElement.disabled = true;
     });
   }
