@@ -51,7 +51,7 @@ export class HtmlproblemsComponent {
     }
 
     this.optionButtons.forEach((button, index) => {
-      if (index === answerIndex) {
+      if (index === answerIndex && this.selectedOptionIndex === answerIndex) {
         button.nativeElement.style.border = "3px solid var(--green)"
         button.nativeElement.classList.add('selectedCorrectAnswer');
       }
