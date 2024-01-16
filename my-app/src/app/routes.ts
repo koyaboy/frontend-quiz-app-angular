@@ -19,7 +19,6 @@ const routeConfig: Routes = [
         component: HtmlproblemsComponent,
         title: 'Html Questions',
     },
-
 ];
 
 export default routeConfig
