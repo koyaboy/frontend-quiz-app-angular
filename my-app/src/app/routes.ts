@@ -15,6 +15,7 @@ const routeConfig: Routes = [
         path: ':title/quizcomplete',
         component: QuizcompleteComponent,
         title: 'Quiz Completed',
+        canActivate: [QuizGuard]
     },
     {
         path: 'html',
