@@ -17,6 +17,6 @@ export class QuizcompleteComponent {
   quizService: QuizService = inject(QuizService)
 
   constructor() {
-    this.quizTitle = this.quizService.getQuizTitleFromUrl(this.route)
+    this.quizTitle = this.quizService.getQuizType()
   }
 }
