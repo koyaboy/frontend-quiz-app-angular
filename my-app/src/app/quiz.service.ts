@@ -439,6 +439,7 @@ export class QuizService {
   selectedQuizType: string = ""
   private selectedQuizSubject = new BehaviorSubject<string>('');
   selectedQuiz$ = this.selectedQuizSubject.asObservable();
+  quizScore!: number
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
     if (isPlatformBrowser(this.platformId)) {
@@ -458,6 +459,14 @@ export class QuizService {
 
   getQuizzes(): Quiz[] {
     return this.quizzes
+  }
+
+  setScore(score: number) {
+    this.quizScore = score
+  }
+
+  getScore() {
+    return this.quizScore
   }
 
   getIconContainerColor(quizTitle: string) {

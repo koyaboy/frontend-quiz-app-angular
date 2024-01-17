@@ -15,8 +15,10 @@ export class QuizcompleteComponent {
 
   quizTitle: string = ""
   quizService: QuizService = inject(QuizService)
+  finalScore!: number
 
   constructor() {
     this.quizTitle = this.quizService.getQuizType()
+    this.finalScore = this.quizService.getScore()
   }
 }

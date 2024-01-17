@@ -26,6 +26,7 @@ export class HtmlproblemsComponent {
   htmlProblems: Question[] = []
   problemIndex: number = 0
   selectedOptionIndex: number = -1;
+  score: number = 0
 
   constructor() {
     this.quizzes = this.quizService.getQuizzes()
@@ -63,6 +64,7 @@ export class HtmlproblemsComponent {
         if (index === answerIndex && this.selectedOptionIndex === answerIndex) {
           button.nativeElement.style.border = "3px solid var(--green)"
           button.nativeElement.classList.add('selectedCorrectAnswer');
+          this.score++
         }
         else if (this.selectedOptionIndex === index) {
           button.nativeElement.style.border = "3px solid var(--red)"
@@ -87,6 +89,7 @@ export class HtmlproblemsComponent {
     this.problemIndex = this.problemIndex + 1
 
     if (this.problemIndex == 10) {
+      this.quizService.setScore(this.score)
       this.router.navigate(['html/quizcomplete'])
     }
 
