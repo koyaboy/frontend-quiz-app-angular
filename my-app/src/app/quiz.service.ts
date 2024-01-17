@@ -445,6 +445,7 @@ export class QuizService {
     if (isPlatformBrowser(this.platformId)) {
       this.selectedQuizType = localStorage.getItem('selectedQuizType') || ""
       this.selectedQuizSubject.next(this.selectedQuizType)
+      this.quizScore = parseInt(localStorage.getItem('score') || '')
     }
   }
 
@@ -463,6 +464,7 @@ export class QuizService {
 
   setScore(score: number) {
     this.quizScore = score
+    if (isPlatformBrowser(this.platformId)) localStorage.setItem('score', score.toLocaleString())
   }
 
   getScore() {
