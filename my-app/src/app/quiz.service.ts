@@ -1,6 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Quiz } from './quiz';
-import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 
