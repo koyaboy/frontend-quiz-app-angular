@@ -449,6 +449,7 @@ export class QuizService {
   }
 
   setQuizType(quizTitle: string) {
+    this.selectedQuizType = quizTitle
     this.selectedQuizSubject.next(quizTitle)
     if (isPlatformBrowser(this.platformId)) localStorage.setItem('selectedQuizType', quizTitle)
   }

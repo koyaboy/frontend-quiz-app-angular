@@ -3,6 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { HtmlproblemsComponent } from './htmlproblems/htmlproblems.component';
 import { QuizcompleteComponent } from './quizcomplete/quizcomplete.component';
 
+import { QuizGuard } from './quiz.guard';
+
 const routeConfig: Routes = [
     {
         path: '',
@@ -15,9 +17,10 @@ const routeConfig: Routes = [
         title: 'Quiz Completed',
     },
     {
-        path: 'html/:id',
+        path: 'html',
         component: HtmlproblemsComponent,
         title: 'Html Questions',
+        canActivate: [QuizGuard]
     },
 ];
 
