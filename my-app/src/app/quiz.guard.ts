@@ -26,7 +26,7 @@ export class QuizGuard {
       }
     } else {
       // Implicit return for server-side (if applicable)
-      return true
+      return false
     }
   }
 
