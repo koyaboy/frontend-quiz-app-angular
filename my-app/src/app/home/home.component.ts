@@ -19,5 +19,6 @@ export class HomeComponent {
 
   constructor() {
     this.quizzes = this.quizService.getQuizzes();
+    this.quizService.setQuizType("")
   }
 }
