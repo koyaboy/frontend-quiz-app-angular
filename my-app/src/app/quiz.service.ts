@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Quiz } from './quiz';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -434,7 +436,25 @@ export class QuizService {
     }
   ]
 
-  constructor() { }
+  selectedQuizType: string = ""
+  private selectedQuizSubject = new BehaviorSubject<string>('');
+  selectedQuiz$ = this.selectedQuizSubject.asObservable();
+
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.selectedQuizType = localStorage.getItem('selectedQuizType') || ""
+      this.selectedQuizSubject.next(this.selectedQuizType)
+    }
+  }
+
+  setQuizType(quizTitle: string) {
+    this.selectedQuizSubject.next(quizTitle)
+    if (isPlatformBrowser(this.platformId)) localStorage.setItem('selectedQuizType', quizTitle)
+  }
+
+  getQuizType(): string {
+    return this.selectedQuizSubject.value
+  }
 
   getQuizzes(): Quiz[] {
     return this.quizzes
@@ -463,9 +483,11 @@ export class QuizService {
     }
   }
 
-  getQuizTitleFromUrl(route: ActivatedRoute) {
-    const urlSegments = route.snapshot.url
-    return urlSegments[0].path
-
-  }
+  // getQuizTitleFromUrl(route: ActivatedRoute) {
+  //   const urlSegments = route.snapshot.url
+  //   if (urlSegments.length > 0) {
+  //     return urlSegments[0].path
+  //   }
+  //   return 'home'
+  // }
 }
