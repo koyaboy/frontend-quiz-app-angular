@@ -1,8 +1,8 @@
-import { Component, inject, ViewChildren, ElementRef, QueryList, ViewChild } from '@angular/core';
+import { Component, inject, ViewChildren, ElementRef, QueryList, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Quiz, Question } from '../quiz';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-htmlproblems',
@@ -28,12 +28,13 @@ export class HtmlproblemsComponent {
   selectedOptionIndex: number = -1;
   score: number = 0
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
     this.quizzes = this.quizService.getQuizzes()
-
     this.htmlProblems = this.quizzes.filter((quiz) => quiz.title == "HTML")[0].questions
 
-    this.problemIndex = Number(this.route.snapshot.params['id']) - 1;
+    if (isPlatformBrowser(this.platformId)) {
+      this.quizService.setQuizType(localStorage.getItem("selectedQuizType") || "")
+    }
   }
 
   getOptionLetter(index: number): string {
@@ -84,9 +85,6 @@ export class HtmlproblemsComponent {
   }
 
   moveToNextQuestion() {
-    const currentQuestionId = Number(this.route.snapshot.params['id'])
-    this.router.navigate(['html', currentQuestionId + 1])
-
     this.problemIndex = this.problemIndex + 1
     if (this.problemIndex == 10) {
       this.router.navigate(['html/quizcomplete'])
