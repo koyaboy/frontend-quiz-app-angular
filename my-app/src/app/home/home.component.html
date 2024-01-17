@@ -8,8 +8,8 @@
     </div>
 
     <div class="quiz-card-container">
-        <a [routerLink]="[quiz.title.toLowerCase()]" *ngFor="let quiz of quizzes" class="quiz-card"
-            (click)='this.quizService.setQuizType(quiz.title.toLowerCase())'>
+        <a [routerLink]="[quiz.title]" *ngFor="let quiz of quizzes" class="quiz-card"
+            (click)='this.quizService.setQuizType(quiz.title)'>
             <div class="icon-container"
                 [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quiz.title)}">
                 <img [src]="quiz.icon" [alt]="quiz.title + 'Icon Image'" />

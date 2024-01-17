@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { HtmlproblemsComponent } from './htmlproblems/htmlproblems.component';
 import { QuizcompleteComponent } from './quizcomplete/quizcomplete.component';
+
+import { QuizComponent } from './quiz/quiz.component';
 
 import { QuizGuard } from './quiz.guard';
 
@@ -12,15 +13,15 @@ const routeConfig: Routes = [
         title: 'Home page',
     },
     {
-        path: ':title/quizcomplete',
-        component: QuizcompleteComponent,
-        title: 'Quiz Completed',
+        path: ':title',
+        component: QuizComponent,
+        title: 'Quiz Questions',
         canActivate: [QuizGuard]
     },
     {
-        path: 'html',
-        component: HtmlproblemsComponent,
-        title: 'Html Questions',
+        path: ':title/quizcomplete',
+        component: QuizcompleteComponent,
+        title: 'Quiz Completed',
         canActivate: [QuizGuard]
     },
 ];

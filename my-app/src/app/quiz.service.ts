@@ -223,7 +223,7 @@ export class QuizService {
     },
     {
       "title": "JavaScript",
-      "icon": "./assets/images/icon-js.svg",
+      "icon": "./assets/images/icon-javascript.svg",
       "questions": [
         {
           "question": "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -493,12 +493,4 @@ export class QuizService {
         break;
     }
   }
-
-  // getQuizTitleFromUrl(route: ActivatedRoute) {
-  //   const urlSegments = route.snapshot.url
-  //   if (urlSegments.length > 0) {
-  //     return urlSegments[0].path
-  //   }
-  //   return 'home'
-  // }
 }

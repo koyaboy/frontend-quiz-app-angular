@@ -4,15 +4,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Quiz, Question } from '../quiz';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
+
 @Component({
-  selector: 'app-htmlproblems',
+  selector: 'app-quiz',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './htmlproblems.component.html',
-  styleUrl: './htmlproblems.component.css'
+  templateUrl: './quiz.component.html',
+  styleUrl: './quiz.component.css'
 })
-
-export class HtmlproblemsComponent {
+export class QuizComponent {
   @ViewChildren('optionButton') optionButtons!: QueryList<ElementRef>;
   @ViewChild('nextButton') nextButton!: ElementRef;
   @ViewChild('submitButton') submitButton!: ElementRef;
@@ -23,14 +23,14 @@ export class HtmlproblemsComponent {
   router: Router = inject(Router)
 
   quizzes: Quiz[] = []
-  htmlProblems: Question[] = []
+  quizProblems: Question[] = []
   problemIndex: number = 0
   selectedOptionIndex: number = -1;
   score: number = 0
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
     this.quizzes = this.quizService.getQuizzes()
-    this.htmlProblems = this.quizzes.filter((quiz) => quiz.title == "HTML")[0].questions
+    this.quizProblems = this.quizzes.filter((quiz) => quiz.title == this.quizService.selectedQuizType)[0].questions
 
     if (isPlatformBrowser(this.platformId)) {
       this.quizService.setQuizType(localStorage.getItem("selectedQuizType") || "")
@@ -48,8 +48,8 @@ export class HtmlproblemsComponent {
 
   submitAnswer(event: MouseEvent) {
     let submitButton = event.target as HTMLElement
-    let options = this.htmlProblems[this.problemIndex].options
-    let answer = this.htmlProblems[this.problemIndex].answer
+    let options = this.quizProblems[this.problemIndex].options
+    let answer = this.quizProblems[this.problemIndex].answer
     let answerIndex = -1
 
     for (let i = 0; i < options.length; i++) {
@@ -87,7 +87,7 @@ export class HtmlproblemsComponent {
     this.problemIndex = this.problemIndex + 1
     if (this.problemIndex == 10) {
       this.quizService.setScore(this.score)
-      this.router.navigate(['html/quizcomplete'])
+      this.router.navigate([this.quizService.selectedQuizType, 'quizcomplete'])
     }
 
     this.resetComponent()
@@ -103,5 +103,4 @@ export class HtmlproblemsComponent {
     this.submitButton.nativeElement.style.display = "block"
     this.nextButton.nativeElement.style.display = "none"
   }
-
 }

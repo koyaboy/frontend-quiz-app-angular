@@ -214,7 +214,7 @@
         },
         {
             "title": "JavaScript",
-            "icon": "./assets/images/icon-js.svg",
+            "icon": "./assets/images/icon-javascript.svg",
             "questions": [
                 {
                     "question": "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -256,7 +256,7 @@
                     ],
                     "answer": "if (i != 5)"
                 },
-                  {
+                {
                     "question": "How does a FOR loop start?",
                     "options": [
                         "for (i = 0; i <= 5)",
@@ -269,10 +269,10 @@
                 {
                     "question": "How can you add a single-line comment in JavaScript?",
                     "options": [
-                      "'This is a single-line comment",
-                      "//This is a single-line comment",
-                      "<!--This is a single-line comment-->",
-                      "/* This is a single-line comment */"
+                        "'This is a single-line comment",
+                        "//This is a single-line comment",
+                        "<!--This is a single-line comment-->",
+                        "/* This is a single-line comment */"
                     ],
                     "answer": "//This is a single-line comment"
                 },
