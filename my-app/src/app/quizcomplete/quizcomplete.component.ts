@@ -21,4 +21,8 @@ export class QuizcompleteComponent {
     this.quizTitle = this.quizService.getQuizType()
     this.finalScore = this.quizService.getScore()
   }
+
+  ngOnDestroy() {
+    this.quizService.setScore(0)
+  }
 }

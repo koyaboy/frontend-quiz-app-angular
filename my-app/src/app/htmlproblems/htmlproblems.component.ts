@@ -66,7 +66,6 @@ export class HtmlproblemsComponent {
           button.nativeElement.style.border = "3px solid var(--green)"
           button.nativeElement.classList.add('selectedCorrectAnswer');
           this.score++
-          this.quizService.setScore(this.score)
         }
         else if (this.selectedOptionIndex === index) {
           button.nativeElement.style.border = "3px solid var(--red)"
@@ -87,6 +86,7 @@ export class HtmlproblemsComponent {
   moveToNextQuestion() {
     this.problemIndex = this.problemIndex + 1
     if (this.problemIndex == 10) {
+      this.quizService.setScore(this.score)
       this.router.navigate(['html/quizcomplete'])
     }
 
