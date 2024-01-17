@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-quizcomplete',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './quizcomplete.component.html',
   styleUrl: './quizcomplete.component.css'
 })
