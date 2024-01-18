@@ -11,6 +11,22 @@
     --white: #FFFFFF;
     --green: #26D782;
     --red: #EE5454;
+
+    --main-bg-color: var(--very-light-grayish-blue);
+    --main-bg-image: url("/assets/images/pattern-background-mobile-light.svg");
+    --text-color: var(--very-dark-grayish-blue);
+    --subtitle-color: var(--grayish-blue);
+    --quiz-card-bg: var(--white);
+    --progress-bar-bg: var(--white);
+}
+
+.dark-theme {
+    --main-bg-color: var(--very-dark-grayish-blue);
+    --main-bg-image: url("/assets/images/pattern-background-mobile-dark.svg");
+    --text-color: var(--white);
+    --subtitle-color: var(--light-grayish-blue);
+    --quiz-card-bg: var(--dark-grayish-blue);
+    --progress-bar-bg: var(--dark-grayish-blue);
 }
 
 @font-face {
@@ -32,4 +48,26 @@ a {
 
 button {
     border: none
+}
+
+
+.light-moon-icon,
+.light-sun-icon {
+    display: none;
+}
+
+.dark-moon-icon,
+.dark-sun-icon {
+    display: block;
+}
+
+/* DARK THEME */
+.dark-theme .dark-moon-icon,
+.dark-theme .dark-sun-icon {
+    display: none;
+}
+
+.dark-theme .light-moon-icon,
+.dark-theme .light-sun-icon {
+    display: block;
 }

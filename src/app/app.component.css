@@ -1,5 +1,5 @@
 .app {
-    background-image: url("/assets/images/pattern-background-mobile-light.svg");
+    background-image: var(--main-bg-image);
     min-height: 100vh;
-    background-color: var(--very-light-grayish-blue);
+    background-color: var(--main-bg-color);
 }

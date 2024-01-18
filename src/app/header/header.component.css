@@ -53,7 +53,7 @@ input[type="checkbox"]:checked+.styled-checkbox {
 
 .quiz-type-container .text {
     font-size: 18px;
-    color: var(--very-dark-grayish-blue);
+    color: var(--text-color);
     font-weight: 600;
     line-height: 100%;
 }

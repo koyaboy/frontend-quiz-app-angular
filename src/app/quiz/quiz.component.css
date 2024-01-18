@@ -4,7 +4,7 @@
 }
 
 .problem-number {
-    color: var(--grayish-blue);
+    color: var(--subtitle-color);
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
@@ -12,7 +12,7 @@
 }
 
 .problem-title {
-    color: var(--very-dark-grayish-blue);
+    color: var(--text-color);
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -22,7 +22,7 @@
 .progress-container {
     display: flex;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--progress-bar-bg);
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 999px;
@@ -50,8 +50,8 @@
     align-items: center;
     gap: 16px;
     padding: 12px;
-    background-color: white;
-    color: var(--very-dark-grayish-blue);
+    background-color: var(--quiz-card-bg);
+    color: var(--text-color);
     border-radius: 12px;
     font-size: 18px;
     font-weight: 600;

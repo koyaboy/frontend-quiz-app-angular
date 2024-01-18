@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -13,6 +13,8 @@ import { Subscription } from 'rxjs';
 })
 
 export class HeaderComponent {
+  @ViewChild('themeSwitcher') themeSwitcher!: ElementRef
+
   subscription!: Subscription
   route: ActivatedRoute = inject(ActivatedRoute)
   quizService: QuizService = inject(QuizService)
@@ -28,10 +30,14 @@ export class HeaderComponent {
       })
   }
 
-  logChecked() {
-    console.log("checked")
+  toggleTheme(): void {
+    if (this.themeSwitcher.nativeElement.checked) {
+      document.body.classList.add("dark-theme")
+    }
+    else {
+      document.body.classList.remove("dark-theme")
+    }
 
-    return true
   }
 
   ngOnDestroy(): void {
