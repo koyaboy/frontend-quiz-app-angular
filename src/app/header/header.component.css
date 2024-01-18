@@ -13,10 +13,18 @@ header {
 
 input[type="checkbox"] {
     position: absolute;
-    opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    left: 4px;
+    opacity: 0;
+    z-index: 999;
+}
+
+input[type="checkbox"]:checked {
+    transform: translateX(80%);
+}
+
+input[type="checkbox"]:checked+.styled-checkbox {
+    transform: translateX(80%);
 }
 
 .checkbox-container {
@@ -30,7 +38,7 @@ input[type="checkbox"] {
     position: relative;
 }
 
-.checkbox-container>span {
+.checkbox-container>.styled-checkbox {
     width: 12px;
     height: 12px;
     background-color: white;

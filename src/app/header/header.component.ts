@@ -28,6 +28,12 @@ export class HeaderComponent {
       })
   }
 
+  logChecked() {
+    console.log("checked")
+
+    return true
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
