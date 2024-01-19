@@ -1,11 +1,12 @@
 <header>
     <div class="quiz-type-container">
-        <div [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quizTitle)}" class="icon-container">
-            <div *ngIf="quizTitle !== '' ">
+        <div *ngIf="quizTitle !== '' ">
+            <div [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quizTitle)}"
+                class="icon-container">
+
                 <img [src]="'../../assets/images/icon-' + quizTitle.toLowerCase() + '.svg'" [alt]="quizTitle + ' Icon'">
             </div>
         </div>
-
         <p class="text">{{quizTitle}}</p>
     </div>
 
