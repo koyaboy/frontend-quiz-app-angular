@@ -51,6 +51,14 @@ input[type="checkbox"]:checked+.styled-checkbox {
     gap: 16px;
 }
 
+.icon-container {
+    padding: 5.71px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .quiz-type-container .text {
     font-size: 18px;
     color: var(--text-color);
@@ -65,5 +73,17 @@ input[type="checkbox"]:checked+.styled-checkbox {
 
     .theme-switch-container {
         gap: 16px;
+    }
+
+    .quiz-type-container {
+        gap: 24px;
+    }
+
+    .quiz-type-container .text {
+        font-size: 28px;
+    }
+
+    .icon-container {
+        padding: 8px;
     }
 }

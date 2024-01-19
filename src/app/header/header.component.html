@@ -1,6 +1,6 @@
 <header>
     <div class="quiz-type-container">
-        <div [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quizTitle)}">
+        <div [ngStyle]="{'background-color': this.quizService.getIconContainerColor(quizTitle)}" class="icon-container">
             <div *ngIf="quizTitle !== '' ">
                 <img [src]="'../../assets/images/icon-' + quizTitle.toLowerCase() + '.svg'" [alt]="quizTitle + ' Icon'">
             </div>

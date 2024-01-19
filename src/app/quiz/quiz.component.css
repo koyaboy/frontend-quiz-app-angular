@@ -17,6 +17,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
+    margin-top: 12px;
 }
 
 .progress-container {
@@ -28,6 +29,7 @@
     border-radius: 999px;
     width: 100%;
     height: 16px;
+    margin-top: 28px;
 }
 
 .progress {
@@ -55,9 +57,7 @@
     border-radius: 12px;
     font-size: 18px;
     font-weight: 600;
-    line-height: 100%;
     text-align: left;
-    box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
 }
 
 .option-letter {
@@ -73,6 +73,8 @@
 
 .option .text {
     width: 199px;
+    font-size: 18px;
+    line-height: 100%;
 }
 
 .submit,
@@ -134,6 +136,7 @@
 .no-answer-container.active {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
     margin-top: 12px;
 }
@@ -143,4 +146,56 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
+}
+
+@media screen and (min-width:675px) {
+    .quiz-problems {
+        padding: 64px;
+        padding-top: 0;
+    }
+
+    .problem-number {
+        font-size: 20px;
+    }
+
+    .problem-title {
+        color: var(--text-color);
+        font-size: 36px;
+        margin-top: 27px;
+    }
+
+    .progress-container {
+        margin-top: 40px;
+    }
+
+    .options {
+        margin-top: 64px;
+        gap: 24px;
+    }
+
+    .option {
+        gap: 32px;
+        border-radius: 24px;
+    }
+
+    .option-letter {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+
+    .option .text {
+        width: 80%;
+        line-height: 100%;
+        font-size: 28px;
+    }
+
+    .submit,
+    .next {
+        margin-top: 32px;
+        padding: 32px;
+        font-size: 28px;
+        border-radius: 24px;
+    }
+
 }

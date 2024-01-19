@@ -79,7 +79,7 @@ export class QuizComponent {
       });
 
       submitButton.style.display = "none"
-      this.nextButton.nativeElement.style.display = "block"
+      this.nextButton.nativeElement.style.display = "flex"
     }
   }
 
@@ -100,7 +100,7 @@ export class QuizComponent {
       button.nativeElement.style.border = "none"
     })
 
-    this.submitButton.nativeElement.style.display = "block"
+    this.submitButton.nativeElement.style.display = "flex"
     this.nextButton.nativeElement.style.display = "none"
   }
 }
