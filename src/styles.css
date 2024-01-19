@@ -24,6 +24,7 @@
     --subtitle-color: var(--grayish-blue);
     --quiz-card-bg: var(--white);
     --progress-bar-bg: var(--white);
+    --error: var(--red)
 }
 
 .dark-theme {
@@ -35,6 +36,7 @@
     --subtitle-color: var(--light-grayish-blue);
     --quiz-card-bg: var(--dark-grayish-blue);
     --progress-bar-bg: var(--dark-grayish-blue);
+    --error: var(--white)
 }
 
 @font-face {

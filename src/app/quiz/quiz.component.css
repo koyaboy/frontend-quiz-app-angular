@@ -142,7 +142,7 @@
 }
 
 .no-answer-container p {
-    color: var(--red);
+    color: var(--error);
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
@@ -162,6 +162,7 @@
         color: var(--text-color);
         font-size: 36px;
         margin-top: 27px;
+        line-height: 120%;
     }
 
     .progress-container {
@@ -198,4 +199,52 @@
         border-radius: 24px;
     }
 
+    .no-answer-container p {
+        font-size: 24px;
+        line-height: 150%;
+    }
+
+}
+
+@media screen and (min-width:1300px) {
+    .quiz-problems {
+        padding: 140px;
+        padding-top: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .question {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40%;
+    }
+
+    .progress-container {
+        margin-bottom: 4.2em;
+    }
+
+    .options {
+        margin-top: 0;
+
+    }
+
+    .options-container {
+        width: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .option {
+        padding: 18px 20px;
+    }
+
+    .no-answer-container.active {
+        position: absolute;
+        display: flex;
+        bottom: -64px;
+        align-self: center;
+    }
 }
