@@ -87,3 +87,9 @@ input[type="checkbox"]:checked+.styled-checkbox {
         padding: 8px;
     }
 }
+
+@media screen and (min-width:675px) {
+    header {
+        padding: 64px 140px;
+    }
+}

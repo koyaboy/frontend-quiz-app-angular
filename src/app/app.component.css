@@ -13,3 +13,10 @@
         background-position: left top;
     }
 }
+
+@media screen and (min-width:1300px) {
+    .app {
+        background-image: var(--main-bg-image-desktop);
+        background-size: auto;
+    }
+}

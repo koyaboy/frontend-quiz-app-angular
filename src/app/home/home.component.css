@@ -94,3 +94,28 @@ h1 .quiz-heading {
         padding: 8px;
     }
 }
+
+@media screen and (min-width:1300px) {
+    .home {
+        flex-direction: row;
+        padding: 140px;
+        padding-top: 75px;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .quiz-card-container {
+        width: 50%
+    }
+
+    .quiz-card {
+        padding: 20px;
+    }
+
+    .subtitle {
+        margin-top: 48px;
+    }
+}
