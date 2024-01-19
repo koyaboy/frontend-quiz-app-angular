@@ -62,3 +62,35 @@ h1 .quiz-heading {
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (min-width:675px) {
+    .home {
+        padding: 64px;
+        gap: 64px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .quiz-card {
+        gap: 32px;
+        border-radius: 24px;
+    }
+
+    .quiz-card-container {
+        gap: 24px;
+    }
+
+    .quiz-card .text {
+        font-size: 28px;
+    }
+
+    .icon-container {
+        padding: 8px;
+    }
+}

@@ -1,5 +1,15 @@
 .app {
-    background-image: var(--main-bg-image);
+    background-image: var(--main-bg-image-mobile);
     min-height: 100vh;
     background-color: var(--main-bg-color);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width:675px) {
+    .app {
+        background-image: var(--main-bg-image-tablet);
+        background-size: auto;
+        background-position: left top;
+    }
 }

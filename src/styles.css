@@ -17,7 +17,9 @@
 
 .light-theme {
     --main-bg-color: var(--very-light-grayish-blue);
-    --main-bg-image: url("/assets/images/pattern-background-mobile-light.svg");
+    --main-bg-image-mobile: url("/assets/images/pattern-background-mobile-light.svg");
+    --main-bg-image-tablet: url("/assets/images/pattern-background-tablet-light.svg");
+    --main-bg-image-desktop: url("/assets/images/pattern-background-desktop-light.svg");
     --text-color: var(--very-dark-grayish-blue);
     --subtitle-color: var(--grayish-blue);
     --quiz-card-bg: var(--white);
@@ -26,7 +28,9 @@
 
 .dark-theme {
     --main-bg-color: var(--very-dark-grayish-blue);
-    --main-bg-image: url("/assets/images/pattern-background-mobile-dark.svg");
+    --main-bg-image-mobile: url("/assets/images/pattern-background-mobile-dark.svg");
+    --main-bg-image-tablet: url("/assets/images/pattern-background-tablet-dark.svg");
+    --main-bg-image-desktop: url("/assets/images/pattern-background-desktop-dark.svg");
     --text-color: var(--white);
     --subtitle-color: var(--light-grayish-blue);
     --quiz-card-bg: var(--dark-grayish-blue);
@@ -45,6 +49,11 @@ body {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     visibility: hidden;
+}
+
+h1,
+p {
+    margin: 0;
 }
 
 .dark-theme,
