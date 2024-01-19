@@ -63,12 +63,18 @@ p {
 }
 
 .light-theme .option,
-.light-theme .quiz-card {
+.light-theme .quiz-card,
+.light-theme .submit,
+.light-theme .next,
+.light-theme .play-again-button {
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
 }
 
 .dark-theme .option,
-.dark-theme .quiz-card {
+.dark-theme .quiz-card,
+.dark-theme .submit,
+.dark-theme .next,
+.dark-theme .play-again-button {
     box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
 }
 
