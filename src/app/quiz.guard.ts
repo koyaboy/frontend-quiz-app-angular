@@ -4,7 +4,6 @@ import { Injectable, inject, PLATFORM_ID, Inject } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import { QuizService } from './quiz.service';
 import { isPlatformBrowser } from '@angular/common';
-import { platform } from 'os';
 
 @Injectable({
   providedIn: 'root',

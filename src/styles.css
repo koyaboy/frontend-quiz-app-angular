@@ -12,6 +12,10 @@
     --green: #26D782;
     --red: #EE5454;
 
+
+}
+
+.light-theme {
     --main-bg-color: var(--very-light-grayish-blue);
     --main-bg-image: url("/assets/images/pattern-background-mobile-light.svg");
     --text-color: var(--very-dark-grayish-blue);
@@ -40,6 +44,12 @@
 body {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
+    visibility: hidden;
+}
+
+.dark-theme,
+.light-theme {
+    visibility: visible;
 }
 
 a {
