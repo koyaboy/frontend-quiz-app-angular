@@ -132,3 +132,20 @@ h1 .bold-heading {
     }
 
 }
+
+@media screen and (min-width:1300px) {
+    .quiz-complete {
+        padding: 140px;
+        padding-top: 40px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .score-button-xl-container {
+        width: 50%;
+    }
+
+    .score-container {
+        padding: 48px;
+    }
+}
