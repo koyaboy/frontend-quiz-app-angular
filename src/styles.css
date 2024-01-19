@@ -85,7 +85,12 @@ a {
 }
 
 button {
-    border: none
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer
 }
 
 

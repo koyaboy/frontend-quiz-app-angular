@@ -72,6 +72,10 @@ h1 .bold-heading {
     background-color: var(--purple);
 }
 
+.play-again-button:hover {
+    opacity: 0.50;
+}
+
 .quiz-type-container .text {
     font-size: 18px;
     font-weight: 600;

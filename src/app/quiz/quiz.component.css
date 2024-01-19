@@ -148,6 +148,16 @@
     line-height: 100%;
 }
 
+/* HOVER INTERACTIONS */
+.submit:hover,
+.next:hover {
+    opacity: 0.50;
+}
+
+.option:hover>.option-letter {
+    color: var(--purple)
+}
+
 @media screen and (min-width:675px) {
     .quiz-problems {
         padding: 64px;
