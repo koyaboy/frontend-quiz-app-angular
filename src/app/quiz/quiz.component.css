@@ -119,16 +119,6 @@
     background-image: url("../../assets/images/icon-error.svg");
 }
 
-.option.selectedCorrectAnswer .option-letter {
-    background-color: var(--green);
-    color: var(--white)
-}
-
-.option.selectedWrongAnswer .option-letter {
-    background-color: var(--red);
-    color: var(--white)
-}
-
 .no-answer-container {
     display: none;
 }
